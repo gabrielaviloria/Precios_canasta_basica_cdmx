@@ -1,8 +1,10 @@
 import tabula
 import pandas as pd
+from decouple import config
 
+ruta_pdf = config('RUTA_PDF')
 tables = tabula.read_pdf(
-    r"C:\Users\Max_1\Downloads\ano-2024.pdf",
+    ruta_pdf,
     pages = '2-3',
     multiple_tables = True,
     lattice= True,
