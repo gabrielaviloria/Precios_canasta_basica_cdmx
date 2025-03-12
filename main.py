@@ -35,7 +35,3 @@ df = df.drop(df.columns[1:n], axis = 1)
 df = df[columns]
 
 print(df.columns)
-
-# Guardar el resultado en un archivo
-with open("preciosCanastaBasica.txt", "w") as file:
-    file.write("\n".join(df.columns))
