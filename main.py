@@ -18,7 +18,7 @@ df = df.drop(range(0,2))
 
 def df_list(df):
     """
-    Devuelve una lista de dataframes a parter del datafra original
+    Devuelve una lista de dataframes con las columnas necesarias a partir del dataframe original
     """
     n = 1
     dfs =[]
@@ -36,9 +36,12 @@ def df_list(df):
             tipo_costo = 'alto'
         subdf['Tipo de costo'] = tipo_costo
         n +=1
-        print(subdf)
-        #dfs.append[subdf]
+        #print(subdf)
+        dfs.append(subdf)
     return dfs    
 
-dfs = df_list(df)       
-print(dfs)
+dfs = df_list(df)      
+
+df_final = pd.concat(dfs, ignore_index= True)
+     
+print(df_final)
